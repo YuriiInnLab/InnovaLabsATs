@@ -19,7 +19,7 @@ module.exports = defineConfig({
     hideXHR: true,
     numTestsKeptInMemory: 5,                                                    //------Reducing browser consumption
     defaultCommandTimeout: 6000,
-    retries: 10,
+    retries: 6,
     
     setupNodeEvents(on, config) {
       // implement node event listeners here

@@ -18,6 +18,18 @@ declare namespace Cypress {
       incStatesPayment(element: any): Chainable<any>
       incSUpsellTest(element: any): Chainable<any>
 
+      //------INC
+      incHomePageTest(element: any): Chainable<any>
+      incStep0Test(element: any): Chainable<any>
+      incStep1Test(element: any): Chainable<any>
+      incStep2Test(element: any): Chainable<any>
+      incStep3Test(element: any): Chainable<any>
+      incStep4Test(element: any): Chainable<any>
+      incStep5Test(element: any): Chainable<any>
+      incStep6Test(element: any): Chainable<any>
+      incStep7Test(element: any): Chainable<any>
+      incStep8Test(element: any): Chainable<any>
+
       //------EIN
       einHomeTest(element: any): Chainable<any>
       einflowTest(element: any): Chainable<any>
@@ -43,6 +55,7 @@ declare namespace Cypress {
       elementExist(element: any): Chainable<any>
       selectRandomDropdownOption(element: any): Chainable<any>
       elementsAreVisible(selector: any, expectedCount: any): Chainable<any>
-
+      sumAndCompare(element: any): Chainable<any>
+      
     }
 }

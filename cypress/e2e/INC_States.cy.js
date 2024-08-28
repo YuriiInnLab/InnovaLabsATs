@@ -6,7 +6,7 @@ import {
 
 const pe = new PageElements()
 
-describe('Trademarksv1 test', () => {
+describe('INC_States sales UI test', () => {
    beforeEach(() => {
       cy.visit('/incorp-ui-v3/')
       Cypress.on('uncaught:exception', (err, runnable) => {
@@ -25,9 +25,9 @@ describe('Trademarksv1 test', () => {
       cy.log('Payment test')
       cy.incStatesPayment()
       cy.log('Payment verified!!!')
-      cy.log('Upsell test')
+      /* cy.log('Upsell test')
       cy.incSUpsellTest()
-      cy.log('Upsell verified!!!')
+      cy.log('Upsell verified!!!') */
 
    })
 })

@@ -6,7 +6,7 @@ import {
 
 const pe = new PageElements()
 
-describe('Trademarksv1 test', () => {
+describe('EIN sales UI test', () => {
    beforeEach(() => {
       cy.visit('/craco-taxid/')
       Cypress.on('uncaught:exception', (err, runnable) => {
