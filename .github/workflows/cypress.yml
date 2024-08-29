@@ -2,7 +2,7 @@ name: Run Cypress Tests
 
 on:
   schedule:
-    # Run every Monday at 00:00 UTC (you can adjust the time to your preference)
+    # Run every Monday at 00:00 UTC (can adjust the time)
     - cron: '0 0 * * MON'
 
 jobs:
