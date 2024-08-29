@@ -1,0 +1,25 @@
+name: Run Cypress Tests
+
+on:
+  schedule:
+    # Run every Monday at 00:00 UTC (you can adjust the time to your preference)
+    - cron: '0 0 * * MON'
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Cypress tests
+        run: npx cypress run --headless --browser chrome
