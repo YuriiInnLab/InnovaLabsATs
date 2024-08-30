@@ -31,11 +31,9 @@ cy.elementIsVisible(pe.tm_search_field)
 cy.elementIsVisible(pe.tm_home_logo)
 cy.elementIsVisible(pe.tm_register_btn)
 cy.get(pe.tm_search_field)
-  .click().type(tmtstdata/*  + '{enter}' */)
+  .click().type(tmtstdata)
 cy.scrollTo('top');
-/* cy.pause() */
 cy.get(pe.tm_search_btn).click({force: true})
-/* cy.pause() */
 cy.intercept('POST', 'https://dev.innova-labs.net:9080/clicks').as('tmflowPageHasLoaded')
 cy.wait('@tmflowPageHasLoaded', { timeout: 10000 }).its('response.statusCode').should('eq', 200)
 })
@@ -58,7 +56,7 @@ Cypress.Commands.add('tmFlowStep1', () => {
   cy.elementIsVisible('#city')
     .type(tmtstdata)
   cy.elementIsVisible('#state')
-  randOptionSelect('#state')  // Selecting State
+  randOptionSelect('#state')                        // Selecting State
   cy.elementIsVisible('#zip').type(testzip)
   cy.elementIsVisible('#phone').type(testphone)
   cy.elementIsVisible('#email').type(tsmaild)
@@ -66,26 +64,17 @@ Cypress.Commands.add('tmFlowStep1', () => {
 })
 
 Cypress.Commands.add('tmFlowStep2', () => {
-    /* cy.intercept('POST', 'https://dev.innova-labs.net:9080/clicks').as('classLoaded').wait(500)
-  cy.wait('@classLoaded', { timeout: 7000 }).its('response.statusCode').should('eq', 200)
-   */
   cy.wait(500)
   cy.elementIsVisible(pe.tm_pack_description)
   cy.elementIsVisible(pe.tm_steps_vis, 5)
   cy.elementIsVisible(pe.tm_new_class_btn)
-  //cy.pause()
   cy.get(pe.tm_class_select)
     .click()
     .type('025')
     .wait(1000)
     .type('{downarrow}'.repeat(getRandomInt(11))+ '{enter}')
   cy.elementIsVisible(pe.tm_continue_btn).click({ force: true })
-  //cy.pause()
-  //cy.elementIsVisible(pe.tm_top_logo)
   cy.wait(1500)
-  /* cy.intercept('PUT', 'https://dev.innova-labs.net:9080/category/products*').as('packagePageLoaded')
-  cy.wait('@packagePageLoaded', { timeout: 7000 }).its('response.statusCode').should('eq', 200)
-   */
 })
 
 Cypress.Commands.add('tmFlowStep3', () => {   
@@ -95,14 +84,13 @@ Cypress.Commands.add('tmFlowStep3', () => {
   cy.elementIsVisible(pe.tm_package_base).eq(1)
   cy.elementIsVisible(pe.tm_package_stand)
   cy.elementIsVisible(pe.tm_package_prem)
-  //cy.pause()
   //cy.elementsAreVisible(pe.tm_select_package, 3) // Verifying all 3 packages are present and can be selected
   
+  // Problem Here
+
   cy.get(pe.tm_select_package).click()
-    //    /|\
-    //     |
-    //     |
-  // Problem Here 
+ 
+   
 })
 
 Cypress.Commands.add('tmFlowStep4', () => {
@@ -111,12 +99,8 @@ Cypress.Commands.add('tmFlowStep4', () => {
   cy.elementIsVisible(pe.tm_rush_or_agreement)
   cy.elementIsVisible(pe.tm_summary).children()
     .should('have.length.at.least', 3)
-  //cy.pause()
   cy.elementIsVisible(pe.tm_continue_btn).click()
   cy.wait(1000)
-  /* cy.intercept('POST', 'https://dev.innova-labs.net:9080/clicks').as('paymentLoaded')
-  cy.wait('@paymentLoaded', { timeout: 7500 }).its('response.statusCode').should('eq', 200)
-   */
 })
 
 Cypress.Commands.add('tmPaymentPage', () => {
@@ -184,7 +168,7 @@ Cypress.Commands.add('incStatesPayment', () => {
   cy.elementIsVisible(pe.incs_pay_yr_Mth).eq(0)
   .type('{downarrow}'.repeat((getRandomInt(12)))+ '{enter}')
   cy.elementIsVisible(pe.incs_pay_yr_Mth).eq(1)
-  .type('{downarrow}'.repeat((getRandomInt(26))+2)+ '{enter}') //do not let card to be expired
+  .type('{downarrow}'.repeat((getRandomInt(26))+2)+ '{enter}')                  //do not let card to be expired
   cy.elementIsVisible('#cvc').type('100')
   cy.elementIsVisible(pe.incs_continue_btn).click()
   cy.intercept('POST', 'https://dev.innova-labs.net:9080/clicks' ).as('incSCompleted')
@@ -195,7 +179,7 @@ Cypress.Commands.add('incSUpsellTest', () => {
   cy.urlValidation('/upsell?step=0')
   cy.elementIsVisible(pe.incs_logo)
   cy.elementsAreVisible(pe.incs_upsell_checkboxes)
-/// Need new checkbox command for checkbox in upsells
+// Need new checkbox command for checkbox in upsells
   cy.sumAndCompare(pe.incs_fupsell_prices, pe.incs_fupsell_sum)
   cy.elementIsVisible(pe.incs_continue_btn).click()
   cy.urlValidation('/upsell?step=1')
@@ -209,7 +193,7 @@ Cypress.Commands.add('incSUpsellTest', () => {
   cy.get(pe.incs_continue_btn).eq(1).click()
   cy.urlValidation('/thankyou')
   cy.elementIsVisible(pe.incs_logo)
-  cy.elementIsVisible(pe.incs_continue_btn) //Go to membership btn
+  cy.elementIsVisible(pe.incs_continue_btn)               //Go to membership btn
 })
 
 //------EIN
