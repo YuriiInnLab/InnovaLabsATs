@@ -1,6 +1,7 @@
 const { defineConfig  } = require("cypress");
 
 module.exports = defineConfig({
+  projectId: 'pfxs1n',
 
   e2e: {
     baseUrl: 'https://dev.innova-labs.net/',
@@ -19,7 +20,7 @@ module.exports = defineConfig({
     hideXHR: true,
     numTestsKeptInMemory: 5,                                                    //------Reducing browser consumption
     defaultCommandTimeout: 6000,
-    retries: 6,
+    retries: 1,
     
     setupNodeEvents(on, config) {
       // implement node event listeners here

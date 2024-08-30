@@ -7,31 +7,29 @@ export class PageElements {
     tm_home_logo = 'div.logo'
     tm_search_field = 'input'
     tm_search_btn = '[style="cursor:pointer"]'
-    tm_multistep1 = ':nth-child(1) > .MuiStepLabel-root'
-    tm_multistep5 = ':nth-child(5) > .MuiStepLabel-root'
+    tm_steps_vis = '.MuiStepLabel-root'
     tm_top_logo = 'a > img'
     tm_register_btn = '[style="cursor:pointer;max-width:fit-content;margin-top:1em"]'
     tm_continue_btn = '.css-9pu3pk'
     tm_pack_description = 'div.left-side'
     tm_class_select = '.async-select__value-container'
     tm_new_class_btn = '#TrademarkForm > .MuiButton-root'
-
-    tm_package_base = 'div[color="black"]'
+    tm_package_base = 'div[color="white"]'
     tm_package_stand = 'div[color="#3498DB"]'
     tm_package_prem = 'div[color="black"]'
-
-    tm_select_package = '.sc-llYSUQ' // changed from '.sc-hKwDye > .sc-egiyK > .sc-crHmcD'
+    tm_select_package = ':nth-child(2) > .sc-bkkeKt > .sc-iJKOTD > .sc-llYSUQ'
     tm_rush_or_agreement = '.form-check-label'
     tm_summary = '.summary'
     tm_payment_but = '.pay'
     tm_payment_form = '.polaroid'
 
-    //------Inc_States
+    //------Inc_States    //sc-llYSUQ bRMIHA
 
     incs_logo = '.navbar-brand'
     incs_contactus_btn = '[href="/incorp-ui-v3/contact-us"]'
     incs_continue_btn = '.Button__StyledButton-sc-17bwchr-0'
     incs_state_select = '.base-select__control.css-13cymwt-control'
+    incs_input_fields = '.BaseInput__StyledGroup-sc-1drn94o-0'
     incs_business_name = '.Body__StyledBody-sc-1y4b41i-0 > .BaseInput__StyledGroup-sc-1drn94o-0 > .BaseInput__StyledControl-sc-1drn94o-2'
     incs_business_cat1 = '.Body__StyledBody-sc-1y4b41i-0 > .Select__StyledGroup-sc-1uvnxe6-0 > .Select__StyledSelectContainer-sc-1uvnxe6-1'
     incs_business_cat2 = '.Body__StyledBody-sc-1y4b41i-0 > :nth-child(2) > .Select__StyledGroup-sc-1uvnxe6-0 > .Select__StyledSelectContainer-sc-1uvnxe6-1'
@@ -56,7 +54,6 @@ export class PageElements {
     incs_fupsell_sum = '.iHrVXw'
     incs_refuse_boiups = '.BOIForm__StyledLinkContainer-sc-fsxm4l-4 > .Text__StyledText-sc-400n51-0'
     
-
     //------EIN
 
     ein_products = '.taxid-product'
